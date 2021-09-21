@@ -1,0 +1,261 @@
+@font-face {
+    font-family: font;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoCjC3jsGyN.woff2)
+}
+
+body {
+    background-image: url("img/cafe3.jpg");
+    background-repeat: no-repeat;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 3px #000;
+    width: 408px;
+    height: 306px;
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+.img {
+    background-image: url("img/memlogo.jpeg");
+    background-size: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 370px;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+img {
+    border : 1px solid #000;
+    width: 100px;
+    height: 100px
+}
+
+h1 {
+    position: absolute;
+    background-color: #e0e0e0;
+    box-shadow: 2px 2px 5px #000,
+                2px 2px 5px #000;
+    font-size: 20px;
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bolder;
+    font-family: 'ubuntu';
+    top: calc(50% + 200px);
+    left: 50%;
+    transform: translate(-50%)
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    position: fixed;
+    background-color: #fff;
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 5px 0px 10px rgb(0 0 0 / 15%);
+    transition: 0.5s;
+    z-index: 10
+}
+
+#navbar:hover {
+    width: 140px;
+    transition: 0.5s;
+    box-shadow: 5px 0px 10px rgb(0 0 0 / 35%);
+}
+
+.home {
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.contact {
+    margin-top: 140px;
+}
+
+.music {
+    position: fixed;
+    bottom: 15px;
+    margin-left: 10px;
+    cursor: default;
+}
+
+.music:hover {
+    padding-top: 100px
+}
+
+.info {
+    margin-top: 80px;
+}
+
+.home, .music, .contact, .info {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    color: #000 !important;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 43px;
+    left: -45px;
+    z-index: 10;
+    font-family: 'font' !important;
+}
+
+#navbar:hover>.home, #navbar:hover>.music, #navbar:hover>.contact, #navbar:hover>.info {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.4s;
+    transform: translateX(50px);
+    transition-delay: 0.1s;
+    height: 25px;
+}
+
+.homeIcon {
+    height: 40px;
+    content: url(img/home.png);
+    filter: brightness(0%);
+    margin-top: 10px;
+    position: fixed;
+    left: 4px
+}
+
+.infoIcon {
+    height: 30px;
+    content: url(img/info.png);
+    filter: brightness(0%);
+    margin-top: 76px;
+    position: fixed;
+    left: 8px
+}
+
+.contactIcon {
+    height: 28px;
+    content: url(img/contact.png);
+    filter: brightness(0%);
+    margin-top: 138px;
+    position: fixed;
+    left: 10px
+}
+
+.musicIcon {
+    position: fixed;
+    content: url(img/music.png);
+    height: 70px;
+    bottom: -8px;
+    left: -10px;
+}
+
+/* Music */
+audio {
+    width: 145px;
+    transform: scale(0.9);
+    height: 35px;
+    background-color: #fff !important;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.2), -2px -2px 4px rgb(0, 0, 0, 0.2);
+    transition: 0.3s
+}
+
+audio:hover {
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.4), -2px -2px 4px rgb(0, 0, 0, 0.4)
+}
+
+audio::-webkit-media-controls-panel {
+    -webkit-justify-content: center;
+    height: 25px;
+}
+
+audio::-webkit-media-controls-panel {
+    display: block
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+    visibility: hidden
+}
+
+audio::-webkit-media-controls-current-time-display {
+    position: relative;
+    font-size: 14px;
+    line-height: 34px;
+    left: 2px;
+    font-family: 'font'
+}
+
+audio::-webkit-media-controls-play-button, audio::-webkit-media-controls-timeline-container, audio::-webkit-media-controls-timeline {
+    display: flex !important;
+    position: absolute
+}
+
+audio::-webkit-media-controls-timeline {
+    top: 2px;
+    left: 15px;
+    width: 73px;
+    z-index: 1;
+}
+
+audio::-webkit-media-controls-play-button {
+    transform: scale(1.1);
+    left: -1px;
+    top: 2px;
+    z-index: 10
+}
+
+#flight {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background: #fff !important;
+    background-color: #fff !important;
+    left: -17px;
+    transition: 0.3s all
+}
+
+.music:hover>#flight {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -45px
+}
+
+#surface {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background: #fff !important;
+    background-color: #fff !important;
+    left: -17px;
+    transition: 0.5s all
+}
+
+.music:hover>#surface {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -85px
+}
+
+#unfolding {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background: #fff !important;
+    background-color: #fff !important;
+    left: -17px;
+    transition: 0.7s all
+}
+
+.music:hover>#unfolding {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -125px
+}

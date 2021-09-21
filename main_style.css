@@ -1,0 +1,512 @@
+@font-face {
+    font-family: font;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCv6KVjbNBYlgoCjC3jsGyN.woff2)
+}
+
+* {
+    font-family: 'font';
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    position: fixed;
+    background-color: #fff;
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 5px 0px 10px rgb(0 0 0 / 15%);
+    transition: 0.5s;
+    z-index: 10
+}
+
+#navbar:hover {
+    width: 140px;
+    transition: 0.5s;
+    box-shadow: 5px 0px 10px rgb(0 0 0 / 35%);
+}
+
+.home {
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.contact {
+    margin-top: 140px;
+}
+
+.music {
+    position: fixed;
+    bottom: 15px;
+    margin-left: 10px;
+    cursor: default;
+}
+
+.music:hover {
+    padding-top: 100px
+}
+
+.info {
+    margin-top: 80px;
+}
+
+.home, .music, .contact, .info {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    color: #000 !important;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 43px;
+    left: -45px;
+    z-index: 10;
+    font-family: 'font' !important;
+}
+
+#navbar:hover>.home, #navbar:hover>.music, #navbar:hover>.contact, #navbar:hover>.info {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.4s;
+    transform: translateX(50px);
+    transition-delay: 0.1s;
+    height: 25px;
+}
+
+.homeIcon {
+    height: 40px;
+    filter: brightness(0%);
+    margin-top: 10px;
+    position: fixed;
+    left: 4px
+}
+
+.infoIcon {
+    height: 30px;
+    filter: brightness(0%);
+    margin-top: 76px;
+    position: fixed;
+    left: 8px
+}
+
+.contactIcon {
+    height: 28px;
+    filter: brightness(0%);
+    margin-top: 138px;
+    position: fixed;
+    left: 10px
+}
+
+.musicIcon {
+    position: fixed;
+    height: 70px;
+    bottom: -8px;
+    left: -10px;
+}
+
+/* Music */
+audio {
+    width: 145px;
+    transform: scale(0.9);
+    height: 35px;
+    background-color: #fff !important;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.2), -2px -2px 4px rgb(0, 0, 0, 0.2);
+    transition: 0.3s
+}
+
+audio:hover {
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.4), -2px -2px 4px rgb(0, 0, 0, 0.4)
+}
+
+audio::-webkit-media-controls-panel {
+    -webkit-justify-content: center;
+    height: 25px;
+}
+
+audio::-webkit-media-controls-panel {
+    display: block
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+    visibility: hidden
+}
+
+audio::-webkit-media-controls-current-time-display {
+    position: relative;
+    font-size: 14px;
+    line-height: 34px;
+    left: 2px;
+    font-family: 'font'
+}
+
+audio::-webkit-media-controls-play-button, audio::-webkit-media-controls-timeline-container, audio::-webkit-media-controls-timeline {
+    display: flex !important;
+    position: absolute
+}
+
+audio::-webkit-media-controls-timeline {
+    top: 2px;
+    left: 15px;
+    width: 73px;
+    z-index: 1;
+}
+
+audio::-webkit-media-controls-play-button {
+    transform: scale(1.1);
+    left: -1px;
+    top: 2px;
+    z-index: 10
+}
+
+#flight {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background: #fff !important;
+    background-color: #fff !important;
+    left: -17px;
+    transition: 0.3s all
+}
+
+.music:hover>#flight {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -45px
+}
+
+#surface {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background: #fff !important;
+    background-color: #fff !important;
+    left: -17px;
+    transition: 0.5s all
+}
+
+.music:hover>#surface {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -85px
+}
+
+#unfolding {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background: #fff !important;
+    background-color: #fff !important;
+    left: -17px;
+    transition: 0.7s all
+}
+
+.music:hover>#unfolding {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -125px
+}
+
+/* Home */
+#home {
+    background: rgb(255 255 255 / 10%);
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 50px;
+    box-shadow: 0px 5px 10px rgb(0 0 0 / 15%);
+    backdrop-filter: blur(3px);
+    transition: 0.4s
+}
+
+#home:hover {
+    box-shadow: 0px 5px 10px rgb(0 0 0 / 42%);
+    transition: 0.4s
+}
+
+.header {
+    position: absolute;
+    right: 20px;
+    top: -13px;
+    font-size: 30px;
+    cursor: default;
+}
+
+/* Game Menu */
+#games {
+    background: #fff !important;
+    position: fixed;
+    top: 40px;
+    width: 100%
+}
+
+.heading {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 35px;
+    font-weight: lighter;
+    cursor: default
+}
+
+#whac, #memory, #doodle {
+    color: #000;
+    position: fixed;
+    font-size: 20px
+}
+
+#whac {
+    left: calc(50% - 400px);
+    position: fixed;
+    color: #0000;
+    top: calc(50% + 80px);
+    background-color: #fff;
+    border-radius: 10px;
+    width: 274px;
+    height: 168px;
+    line-height: 270px;
+    text-align: left;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 29%);
+    transition: 0.6s;
+    z-index: 1 !important
+}
+
+#whac:hover {
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 49%);
+    transition: 0.6s;
+    margin-top: -15px
+}
+
+#whacDesc {
+    color: #000 !important;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    height: 100px;
+    width: 230px;
+    top: calc(50% + 76px);
+    left: calc(50% - 386px);
+    line-height: 18px;
+    font-size: 16px;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+#whac:hover>#whacDesc {
+    opacity: 1;
+    transition: 0.6s;
+    transform: unset;
+    margin-top: 0px
+}
+
+#whacthumb {
+    height: 140px;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    border-radius: 10px;
+    transition: 0.45s;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 25%);
+}
+
+#whac:hover>#whacthumb {
+    opacity: 0;
+    transition: 0.45s;
+    margin-top: 0px
+}
+
+#flappyBird {
+    left: calc(50% - 400px);
+    position: fixed;
+    color: #0000;
+    top: calc(50% - 170px);
+    background-color: #fff;
+    border-radius: 10px;
+    width: 274px;
+    height: 168px;
+    line-height: 270px;
+    text-align: left;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 29%);
+    transition: 0.6s;
+    z-index: 1 !important
+}
+
+#flappyBird:hover {
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 49%);
+    transition: 0.6s;
+    margin-top: -15px
+}
+
+#flapDesc {
+    color: #000 !important;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    height: 100px;
+    width: 230px;
+    top: calc(50% - 175px);
+    left: calc(50% - 386px);
+    line-height: 17px;
+    font-size: 15px;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+#flappyBird:hover>#flapDesc {
+    opacity: 1;
+    transition: 0.6s;
+    transform: unset;
+    margin-top: 0px
+}
+
+#flapthumb {
+    height: 140px;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 32%);
+    transition: 0.45s;
+}
+
+#flappyBird:hover>#flapthumb {
+    opacity: 0;
+    transition: 0.45s;
+    margin-top: 0px
+}
+
+#doodle {
+    left: calc(50% + 170px);
+    top: calc(50% - 170px);
+    position: fixed;
+    color: #0000;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 274px;
+    height: 168px;
+    line-height: 270px;
+    text-align: left;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 29%);
+    transition: 0.6s;
+    z-index: 1 !important
+}
+
+#doodle:hover {
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 49%);
+    transition: 0.6s;
+    margin-top: -15px
+}
+
+#doodDesc {
+    color: #000 !important;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    padding-bottom: 20px;
+    position: fixed;
+    height: 110px;
+    width: 230px;
+    top: calc(50% - 169px);
+    left: calc(50% + 184px);
+    line-height: 17px;
+    font-size: 15px;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+#doodle:hover>#doodDesc {
+    opacity: 1;
+    transition: 0.6s;
+    transform: unset;
+    margin-top: 0px
+}
+
+
+#doodThumb {
+    height: 140px;
+    position: absolute;
+    top: 13px;
+    left: 33.5px;
+    border-radius: 10px;
+    transition: 0.45s;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 25%);
+    transform: scaleX(1.17)
+}
+
+#doodle:hover>#doodthumb {
+    opacity: 0;
+    transition: 0.45s;
+    margin-top: 0px
+}
+
+#memory {
+    left: calc(50% + 170px);
+    top: calc(50% + 80px);
+    position: fixed;
+    color: #0000;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 274px;
+    height: 168px;
+    line-height: 270px;
+    text-align: left;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 29%);
+    transition: 0.6s;
+    z-index: 1 !important
+}
+
+#memory:hover {
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 49%);
+    transition: 0.6s;
+    margin-top: -15px
+}
+
+#memDesc {
+    color: #000 !important;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    height: 100px;
+    width: 230px;
+    top: calc(50% + 76px);
+    left: calc(50% + 186px);
+    line-height: 18px;
+    font-size: 16px;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+#memory:hover>#memDesc {
+    opacity: 1;
+    transition: 0.6s;
+    transform: unset;
+    margin-top: 0px
+}
+
+#memthumb {
+    height: 140px;
+    width: 250px;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    border-radius: 10px;
+    transition: 0.45s;
+    box-shadow: 1px 1px 8px rgb(0 0 0 / 25%);
+}
+
+#memory:hover>#memthumb {
+    opacity: 0;
+    transition: 0.45s;
+    margin-top: 0px
+}

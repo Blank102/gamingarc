@@ -1,0 +1,58 @@
+<html>
+      <head>
+            <link rel="stylesheet" href="main_style.css">
+      </head>
+      <title>Gaming Arc</title> 
+      <body>
+            <div id="navbar">
+                  <a class="home" href="index.html">Home</a>
+                  <a class="info" href="info_html.html">About us</a>
+                  <a class="contact" href="contact_html.html">Contact</a>
+                  <a class="music">Music
+                        <audio controls id="flight" src="music/flight.mp3" loop="loop"></audio>
+          <audio controls id="surface" src="music/surface.mp3" loop="loop"></audio>
+          <audio controls id="unfolding" src="music/unfolding.mp3" loop="loop"></audio>
+                  </a>
+                  <img src="img/home.png" class="homeIcon"></img>
+                  <img src="img/contact.png" class="contactIcon"></img>
+                  <img src="img/music.png" class="musicIcon"></img>
+                  <img src="img/info.png" class="infoIcon"></img>
+              </div>
+
+            <div id="home">
+                  <h1 class="header">Gaming Arc</h1>
+            </div>
+
+            <div id="games">
+                  <p class="heading">Games</p>
+                  <a class="gameGrid" id="flappyBird" href="flap_index.html">Flappy Bird
+                        <img id="flapthumb" src="img/flappy-thumb.webp"></img>
+                        <p id="flapDesc"> Flappy Bird is an arcade-style single-player game in which the player controls the bird Faby, 
+                              which moves persistently to the right. It was initially designed by Dong Nguyen in year 2013.</p>
+                  </a>
+                  <a class="gameGrid" id="whac" href="whac_index.html">Whac-a-Mole
+                        <img id="whacthumb" src="img/whac-thumb.png"></img>
+                        <p id="whacDesc">Whac-a-Mole is an arcade or carnival game in which players use a hammer 
+                              to hit moles that pop at random places. Now, it's available in your device!!</p>
+                  </a>
+                  <a class="gameGrid" id="memory" href="memory_index.html">Memory Game
+                        <img id="memthumb" src="img/memlogo.jpeg"></img>
+                        <p id="memDesc">Memory Game is a card game with a picture on opposite side and each picture appears twice. If 
+                              you are able to match the cards with same picture you score a point!!
+                        </p>
+                  </a>
+                  <a class="gameGrid" id="doodle" href="doodle_index.html">Doodle Jump
+                        <img id="doodthumb" src="img/doodlelogo.jpg"></img>
+                        <p id="doodDesc">Doodle Jump is a platforming video game originally developed and published by American 
+                              studio Lima Sky. The aim is to guide the Doodler up an unending series of platforms without falling.</p>
+                  </a>
+            </div>
+      </body>
+      <script>
+            window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.getElementById("flight");
+  audio.volume = 1;
+  audio.play();
+});
+      </script>
+</html>

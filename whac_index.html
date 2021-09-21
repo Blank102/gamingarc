@@ -1,0 +1,128 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Whac A Mole</title>
+  <link rel="stylesheet" href="whac_style.css">
+</head>
+
+<body>
+
+  <div id="navbar">
+    <a class="home" href="index.html">Home</a>
+    <a class="info" href="info_html.html">About us</a>
+    <a class="contact" href="contact_html.html">Contact</a>
+    <a class="music">Music
+          <audio controls id="flight" src="music/flight.mp3" loop="loop"></audio>
+          <audio controls id="surface" src="music/surface.mp3" loop="loop"></audio>
+          <audio controls id="unfolding" src="music/unfolding.mp3" loop="loop"></audio>
+    </a>
+    <img src="img/home.png" class="homeIcon"></img>
+    <img src="img/contact.png" class="contactIcon"></img>
+    <img src="img/music.png" class="musicIcon"></img>
+    <img src="img/info.png" class="infoIcon"></img>
+</div>
+
+  <button type="button" id="restart" onClick="window.location.reload();">Restart</button>
+  <div class="logo">
+        <span class="logo" id="logw">W</span>
+        <span class="logo" id="logh">H</span>
+        <span class="logo" id="loga">A</span>
+        <span class="logo" id="logc">C</span>
+        <span class="logo" id="log-">-</span>
+        <span class="logo" id="loga2">A</span>
+        <span class="logo" id="log-2">-</span>
+        <span class="logo" id="logm">M</span>
+        <span class="logo" id="logo">O</span>
+        <span class="logo" id="logl">L</span>
+        <span class="logo" id="loge">E</span>
+        <span class="logo" id="logex">!</span>
+    </div>
+
+  <h2 class="sco">Your score:</h2>
+  <h2 class="sco"id="score">0</h2>
+
+  <h2 class="time">Time Left:</h2>
+  <h2 class="time" id="time-left">60</h2>
+
+  <div class="grid">
+    <div class="square" id="bl1"></div>
+    <div class="square" id="bl2"></div>
+    <div class="square" id="bl3"></div>
+    <div class="square" id="bl4"></div>
+    <div class="square" id="bl5"></div>
+    <div class="square" id="bl6"></div>
+    <div class="square" id="bl7"></div>
+    <div class="square" id="bl8"></div>
+    <div class="square" id="bl9"></div>
+  </div>
+
+<script>
+const squares = document.querySelectorAll('.square')
+const mole = document.querySelector('.mole')
+const timeLeft = document.querySelector('#time-left')
+const score = document.querySelector('#score')
+
+let result = 0
+let hitPosition
+let currentTime = 60
+let timerId = null
+
+function randomSquare() {
+  squares.forEach(square => {
+    square.classList.remove('mole')
+  })
+
+  let randomSquare = squares[Math.floor(Math.random() * 9)]
+  randomSquare.classList.add('mole')
+
+  hitPosition = randomSquare.id
+}
+
+squares.forEach(square => {
+  square.addEventListener('mousedown', () => {
+    if (square.id == hitPosition) {
+      result++
+      score.textContent = result
+      hitPosition = null
+    }
+    else if (square.id != hitPosition && currentTime != 0) {
+      result--
+      score.textContent = result
+    }
+  })
+})
+
+function moveMole() {
+  timerId = setInterval(randomSquare, 600)
+}
+
+moveMole()
+
+function countDown() {
+ currentTime--
+ timeLeft.textContent = currentTime
+
+ if (currentTime == 0 && result <= 45) {
+   clearInterval(countDownTimerId)
+   clearInterval(timerId)
+   alert('Game over, your final score is ' + result + '. Try harder')
+ }
+
+ else if (currentTime == 0 && result <= 80 && result > 45) {
+   clearInterval(countDownTimerId)
+   clearInterval(timerId)
+   alert('Game over, your final score is ' + result + '. Decentish!')
+ }
+
+ else if (currentTime == 0 && result >= 80) {
+  clearInterval(countDownTimerId)
+   clearInterval(timerId)
+   alert('Game over, your final score is ' + result + '. Impressive!!')
+ }
+}
+let countDownTimerId = setInterval(countDown, 1000)    
+</script>
+</body>
+</html>
