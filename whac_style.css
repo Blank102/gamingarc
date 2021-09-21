@@ -324,10 +324,11 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 audio::-webkit-media-controls-current-time-display {
-    position: relative;
+    position: absolute;
     font-size: 14px;
     line-height: 34px;
-    left: 2px;
+    z-index: 10;
+    right: 5px;
     font-family: 'font'
 }
 
@@ -348,6 +349,10 @@ audio::-webkit-media-controls-play-button {
     left: -1px;
     top: 2px;
     z-index: 10
+}
+
+audio::-webkit-media-controls-mute-button {
+    visibility: hidden
 }
 
 #flight {
