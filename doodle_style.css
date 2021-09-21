@@ -170,30 +170,35 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 audio::-webkit-media-controls-current-time-display {
-  position: relative;
-  font-size: 14px;
-  line-height: 34px;
-  left: 2px;
-  font-family: 'font'
+    position: absolute;
+    font-size: 14px;
+    line-height: 34px;
+    z-index: 10;
+    right: 5px;
+    font-family: 'font'
 }
 
 audio::-webkit-media-controls-play-button, audio::-webkit-media-controls-timeline-container, audio::-webkit-media-controls-timeline {
-  display: flex !important;
-  position: absolute
+    display: flex !important;
+    position: absolute
 }
 
 audio::-webkit-media-controls-timeline {
-  top: 2px;
-  left: 15px;
-  width: 73px;
-  z-index: 1;
+    top: 2px;
+    left: 15px;
+    width: 73px;
+    z-index: 1;
 }
 
 audio::-webkit-media-controls-play-button {
-  transform: scale(1.1);
-  left: -1px;
-  top: 2px;
-  z-index: 10
+    transform: scale(1.1);
+    left: -1px;
+    top: 2px;
+    z-index: 10
+}
+
+audio::-webkit-media-controls-mute-button {
+    visibility: hidden
 }
 
 #flight {
